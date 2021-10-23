@@ -164,7 +164,7 @@ app.post('/api/bill', (req, res, next) => {
         "message": "Bill Added Successfully!!"
     })
 });
-// Create a cash order
+// Create a cash order.
 app.post('/api/cashorder', (req, res, next) => {
     const cashorder = new CashOrder({
         cashOrderDate: req.body.cashOrderDate,
@@ -182,6 +182,7 @@ app.post('/api/cashorder', (req, res, next) => {
         netAmount: req.body.netAmount,
         table: req.body.table
     });
+
     cashorder.save();
     res.status(201).json({
         "message": "Cash Order Added Successfully!!"
