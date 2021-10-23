@@ -167,8 +167,8 @@ app.post('/api/bill', (req, res, next) => {
 // Create a cash order
 app.post('/api/cashorder', (req, res, next) => {
     const cashorder = new CashOrder({
-        billDate: req.body.cashOrderDate,
-        challanNumber: req.body.cashOrderNumber,
+        cashOrderDate: req.body.cashOrderDate,
+        cashOrderNumber: req.body.cashOrderNumber,
         companyData: req.body.companyData,
         companyId: req.body.companyId,
         grNo: req.body.grNo,
