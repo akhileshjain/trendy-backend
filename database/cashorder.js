@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Schema for Cash order
 const cashOrderSchema = mongoose.Schema({
                     cashOrderDate: {type: Date, required: true},
                     cashOrderNumber: {type: String, required: true},
