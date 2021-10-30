@@ -41,7 +41,7 @@ app.use('/api/bills', (req, res, next) => {
 // Fetch All Cash orders
 app.use('/api/cashorders', (req, res, next) => {
     CashOrder.find().sort({"cashOrderNumber": -1}).then((cashorders) => {
-        res.status(200).json({
+        res.status(200).json(   {
             "data": cashorders
         });    
     }).catch(err => {
@@ -227,7 +227,8 @@ app.post('/api/customer', (req, res, next) => {
 // Create a new item
 app.post('/api/item', (req, res, next) => {
     const item = new Item({
-        itemName: req.body.itemName
+        itemName: req.body.itemName,
+        addToTotal = req.body.addToTotal
         // color: req.body.color,
         // size: req.body.size
     });

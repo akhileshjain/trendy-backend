@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const itemSchema = mongoose.Schema({
-    itemName: {type: String, required: true}
+    itemName: {type: String, required: true},
+    addToTotal: {type: Boolean, required: true}
     // color: {type: String, required: true},
     // size: {type: Number, required: true}
 });
