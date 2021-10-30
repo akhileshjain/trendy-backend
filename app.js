@@ -228,7 +228,7 @@ app.post('/api/customer', (req, res, next) => {
 app.post('/api/item', (req, res, next) => {
     const item = new Item({
         itemName: req.body.itemName,
-        addToTotal = req.body.addToTotal
+        addToTotal: req.body.addToTotal
         // color: req.body.color,
         // size: req.body.size
     });
