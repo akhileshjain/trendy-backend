@@ -142,21 +142,46 @@ app.get('/api/cashorder', (req, res, next) => {
 })
 // Deletes a bill
 app.post('/api/deleteBill', (req, res, next) => {
+
     console.log(req.body);
-    Bill.updateOne({"challanNumber": req.body.challanNumber}, {"isDeleted": req.body.isDeleted}, {"returnOriginal": false}).then(data => {
-        if (data) {
-            res.status(201).json({
-                "message": "Successfully Deleted",
-                data: data
-            })
-        }
-    }).catch(err => {
-        console.log(err);
-        res.status(500).json({
-            "message": "Something went wrong!",
-             "data": err
-         }); 
-    })
+    let orderId = req.body.challanNumber;
+    if(orderId) {
+        Bill.findOne({"challanNumber": orderId}).then(data => {
+            if(data) {
+                res.status(200).json({
+                    "message": "Bill fetched successfully!",
+                     data: data
+                })
+            } else {
+                res.status(404).json({
+                    "message": "Bill not found!",
+                     data: []
+                })
+            }
+        }).catch((err) => {
+            res.status(500).json({
+                "message": "Something went wrong!",
+                 "data": err
+             });  
+        })
+    }
+
+
+
+    // Bill.updateOne({"challanNumber": req.body.challanNumber}, {"isDeleted": req.body.isDeleted}).then(data => {
+    //     if (data) {
+    //         res.status(201).json({
+    //             "message": "Successfully Deleted",
+    //             data: data
+    //         })
+    //     }
+    // }).catch(err => {
+    //     console.log(err);
+    //     res.status(500).json({
+    //         "message": "Something went wrong!",
+    //          "data": err
+    //      }); 
+    // })
 });
 
 // Create a bill
