@@ -142,7 +142,7 @@ app.get('/api/cashorder', (req, res, next) => {
 })
 // Deletes a bill
 app.post('/api/deleteBill', (req, res, next) => {
-    Bill.updateOne({challanNumber: req.body.challanNumber}, {$set: { isDeleted: req.body.isDeleted}}, {upsert: true}).then(res => {
+    Bill.findOneAndUpdate({challanNumber: req.body.challanNumber}, {$set: { isDeleted: req.body.isDeleted}}).then(res => {
         if (res) {
             res.status(201).json({
                 "message": "Successfully Deleted",
