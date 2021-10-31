@@ -140,6 +140,13 @@ app.get('/api/cashorder', (req, res, next) => {
         })
     }
 })
+// Deletes a bill
+app.post('/api/deleteBill', (req, res, next) => {
+    Bill.updateOne({challanNumber:req.query.challanNumber}, {$set: { isDeleted: req.body.isDeleted }}, {upsert: true}, function(err, res) {
+        if (err) return res.status(500).json({"message": "Error deleting the challan"});
+        return res.status(201).json({"message": 'Succesfully Deleted.'});
+    });
+});
 // Create a bill
 app.post('/api/bill', (req, res, next) => {
     const bill = new Bill({
