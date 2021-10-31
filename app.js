@@ -142,7 +142,8 @@ app.get('/api/cashorder', (req, res, next) => {
 })
 // Deletes a bill
 app.post('/api/deleteBill', (req, res, next) => {
-    Bill.findOneAndUpdate({challanNumber: req.body.challanNumber}, {isDeleted: req.body.isDeleted}).then(res => {
+    console.log(req.body);
+    Bill.findOneAndUpdate({"challanNumber": req.body.challanNumber}, {"isDeleted": req.body.isDeleted}, {"returnOriginal": false}).then(res => {
         if (res) {
             res.status(201).json({
                 "message": "Successfully Deleted",
@@ -150,6 +151,7 @@ app.post('/api/deleteBill', (req, res, next) => {
             })
         }
     }).catch(err => {
+        console.log(err);
         res.status(500).json({
             "message": "Something went wrong!",
              "data": err
