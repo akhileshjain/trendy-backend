@@ -142,7 +142,6 @@ app.get('/api/cashorder', (req, res, next) => {
 })
 // Deletes a bill
 app.post('/api/deleteBill', (req, res, next) => {
-    console.log(req.body);
     Bill.deleteOne({"challanNumber": req.body.challanNumber}).then(data => {
         if (data) {
             res.status(201).json({
@@ -161,8 +160,7 @@ app.post('/api/deleteBill', (req, res, next) => {
 
 // deletes a cash order
 app.post('/api/deleteCashOrder', (req, res, next) => {
-    console.log(req.body);
-    CashOrder.deleteOne({"cashOrder": req.body.cashOrder}).then(data => {
+    CashOrder.deleteOne({"cashOrder": req.body.cashOrderNumber}).then(data => {
         if (data) {
             res.status(201).json({
                 "message": "Cash Order Successfully Deleted",
