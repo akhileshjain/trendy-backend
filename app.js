@@ -160,7 +160,7 @@ app.post('/api/deleteBill', (req, res, next) => {
 
 // deletes a cash order
 app.post('/api/deleteCashOrder', (req, res, next) => {
-    CashOrder.deleteOne({"cashOrder": req.body.cashOrderNumber}).then(data => {
+    CashOrder.deleteOne({"cashOrderNumber": req.body.cashOrderNumber}).then(data => {
         if (data) {
             res.status(201).json({
                 "message": "Cash Order Successfully Deleted",
