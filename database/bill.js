@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const billSchema = mongoose.Schema({
                     billDate: {type: Date, required: true},
-                    challanNumber: {type: String, required: true},
+                    challanNumber: {type: Number, required: true},
                     gstbillNumber: {type: String},
                     companyData: {type: String},
                     companyId: {type: String},
