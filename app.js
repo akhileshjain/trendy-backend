@@ -33,7 +33,7 @@ app.use('/api/bills', (req, res, next) => {
         });    
     }).catch(err => {
         res.status(200).json({
-            "message": "Bills could not be fetched successfully!",
+            "message": "Bills could not be fetched successfully! ",
              "data": err
          });         
     })            
