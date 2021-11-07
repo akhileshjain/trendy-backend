@@ -30,7 +30,8 @@ app.use('/api/bills', (req, res, next) => {
     Bill.find().sort({"challanNumber": -1}).then((bills) => {
         res.status(200).json({
             "data": bills
-        });    
+        }); 
+           
     }).catch(err => {
         res.status(200).json({
             "message": "Bills could not be fetched successfully! ",
