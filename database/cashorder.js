@@ -12,6 +12,7 @@ const cashOrderSchema = mongoose.Schema({
                     embBreakUp: {type: String},
                     embText: {type: String},
                     embCharge: {type: Number},
+                    freightText: {type: String},
                     disc: {type: Number},
                     transCharge: {type: Number},
                     netAmount: {type: Number, required: true},

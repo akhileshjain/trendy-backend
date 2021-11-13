@@ -193,6 +193,7 @@ app.post('/api/bill', (req, res, next) => {
         embText: req.body.embText,
         embBreakUp: req.body.embBreakUp,
         embCharge: req.body.embCharge,
+        freightText: req.body.freightText,
         netAmount: req.body.netAmount,
         table: req.body.table
     });
@@ -215,6 +216,7 @@ app.post('/api/cashorder', (req, res, next) => {
         transCharge: req.body.transCharge,
         embText: req.body.embText,
         embBreakUp: req.body.embBreakUp,
+        freightText: req.body.freightText,
         embCharge: req.body.embCharge,
         netAmount: req.body.netAmount,
         table: req.body.table
