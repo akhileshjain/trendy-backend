@@ -14,6 +14,7 @@ const billSchema = mongoose.Schema({
                     embCharge: {type: Number},
                     freightText: {type: String},
                     disc: {type: Number},
+                    discPercent: {type: Number},
                     transCharge: {type: Number},
                     netAmount: {type: Number, required: true},
                     table: {type: Array, required: true}
