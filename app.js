@@ -147,7 +147,7 @@ app.get("/api/bill", (req, res, next) => {
 });
 
 // Edit a specific bill
-app.get("/api/editBill", (req, res, next) => {
+app.post("/api/editBill", (req, res, next) => {
   let orderId = req.body.challanNumber;
   if (orderId) {
     Bill.deleteOne({ challanNumber: orderId })
