@@ -97,7 +97,7 @@ app.get("/api/getLatestCashOrderNo", (req, res, next) => {
     })
     .catch((err) => {
       res.status(200).json({
-        message: "Could not fetch successfully!",
+        message: " Could not fetch successfully!",
         data: err,
       });
     });
@@ -151,7 +151,7 @@ app.post("/api/editBill", (req, res, next) => {
   let orderId = req.body.challanNumber;
   console.log(req.body);
   if (orderId) {
-    Bill.deleteOne({ challanNumber: orderId })
+    Bill.deleteOne({challanNumber: orderId })
       .then((data) => {
           console.log(data);
         if (data) {
