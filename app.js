@@ -8,7 +8,7 @@ const Customer = require("./database/customer");
 const Bill = require("./database/bill");
 const CashOrder = require("./database/cashorder");
 
-// MongoDB connection to Lavika Knitwears
+// MongoDB connection to Lavika Knitwears Website
 mongoose
   .connect(
     "mongodb+srv://dbadm:hssqHgYajGmRg553@cluster0.evbjt.mongodb.net/trendy?retryWrites=true&w=majority"
